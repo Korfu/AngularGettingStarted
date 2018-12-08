@@ -1,9 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { IProduct } from "./product";
-import { ProductService } from "./product.service";
+import { Component, OnInit } from '@angular/core';
+import { IProduct } from './product';
+import { ProductService } from './product.service';
 
 @Component({
-    selector: 'pm-products',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
@@ -18,8 +17,8 @@ export class ProductListComponent implements OnInit {
 
     performFilter(filterBy: string): IProduct[] {
         filterBy = filterBy.toLocaleLowerCase();
-        return this.products.filter((product: IProduct) => 
-        product.productName.toLocaleLowerCase().indexOf(filterBy)!== -1);
+        return this.products.filter((product: IProduct) =>
+        product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
    
     pageTitle:string= 'Product List Interpolated';
